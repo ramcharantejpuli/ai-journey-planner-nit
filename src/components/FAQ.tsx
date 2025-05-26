@@ -41,7 +41,7 @@ const FAQ = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 relative z-10 drop-shadow-[0_2px_10px_rgba(59,130,246,0.5)] pb-2">
             Frequently Asked Questions
           </h2>
           <p className="text-gray-400 text-lg">Get answers to common questions</p>

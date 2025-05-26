@@ -23,7 +23,7 @@ const Success = () => {
   const generatePDF = () => {
     // Simple PDF generation simulation
     const doc = `
-      AI WORKSHOP 2024 - ENTRY PASS
+      AI WORKSHOP 2025 - ENTRY PASS
       
       Participant: ${registrationData?.name}
       Registration ID: ${registrationData?.registrationId}
@@ -31,7 +31,7 @@ const Success = () => {
       Phone: ${registrationData?.phone}
       
       Event Details:
-      - Dates: December 11-14, 2024
+      - Dates: June 11-14, 2025 (can be extended)
       - Venue: NIT Jalandhar & Mohali
       - Status: CONFIRMED
       
@@ -91,7 +91,7 @@ const Success = () => {
               transition={{ delay: 0.7, duration: 0.8 }}
               className="text-xl text-gray-300 mb-8"
             >
-              Welcome to the AI Workshop 2024
+              Welcome to the AI Workshop 2025
             </motion.p>
           </motion.div>
 
@@ -145,7 +145,7 @@ const Success = () => {
                 <div className="flex items-center gap-3">
                   <Calendar className="w-5 h-5 text-blue-400" />
                   <div>
-                    <p className="text-white font-medium">December 11-14, 2024</p>
+                    <p className="text-white font-medium">June 11-14, 2025 <span className="text-green-400 text-sm">(can be extended)</span></p>
                     <p className="text-gray-400 text-sm">4-Day AI Workshop</p>
                   </div>
                 </div>

@@ -247,7 +247,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 drop-shadow-lg"
             >
-              AI Workshop 2024
+              AI Workshop 2025
             </motion.h1>
 
             <motion.p
@@ -265,7 +265,7 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-lg text-gray-300 mb-8"
             >
-              NIT Jalandhar | December 11-14, 2024
+              NIT Jalandhar | June 11-14, 2025 (can be extended)
             </motion.p>
 
             <motion.div
@@ -340,7 +340,7 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold text-white mb-8">Need Help?</h2>
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-8 relative z-10 drop-shadow-[0_2px_10px_rgba(59,130,246,0.5)] pb-2">Need Help?</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full"

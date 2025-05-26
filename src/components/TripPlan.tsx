@@ -22,21 +22,6 @@ const TripPlan = () => {
       color: "from-blue-500 to-blue-600"
     },
     {
-      day: 2,
-      date: "Dec 12, 2024",
-      title: "Industrial Tour",
-      location: "Mohali Tech Hub",
-      icon: MapPin,
-      activities: [
-        "Bus Departure (7:00 AM)",
-        "Company Visits",
-        "Industry Expert Sessions",
-        "Networking Lunch"
-      ],
-      time: "7:00 AM - 8:00 PM",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
       day: 3,
       date: "Dec 13, 2024",
       title: "Hands-on AI Labs",
@@ -50,6 +35,21 @@ const TripPlan = () => {
       ],
       time: "9:00 AM - 6:00 PM",
       color: "from-pink-500 to-pink-600"
+    },
+    {
+      day: 2,
+      date: "Dec 12, 2024",
+      title: "Industrial Tour",
+      location: "Mohali Tech Hub",
+      icon: MapPin,
+      activities: [
+        "Bus Departure (7:00 AM)",
+        "Company Visits",
+        "Industry Expert Sessions",
+        "Networking Lunch"
+      ],
+      time: "7:00 AM - 8:00 PM",
+      color: "from-purple-500 to-purple-600"
     },
     {
       day: 4,
@@ -77,7 +77,7 @@ const TripPlan = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 relative z-10 drop-shadow-[0_2px_10px_rgba(59,130,246,0.5)] pb-2">
             4-Day Trip Plan
           </h2>
           <p className="text-gray-400 text-lg">Your complete learning journey breakdown</p>
@@ -93,7 +93,10 @@ const TripPlan = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <Card className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border-white/20 hover:from-white/20 hover:to-white/10 transition-all duration-500 group">
+                <Card className="bg-gradient-to-br from-black to-gray-900 backdrop-blur-lg border border-gray-800 shadow-lg hover:shadow-xl transition-all duration-500 group overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-white/10 opacity-40"></div>
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.15),_transparent_70%)] pointer-events-none"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
                   <CardContent className="p-6">
                     {/* Day Header */}
                     <div className="flex items-center justify-between mb-6">
@@ -138,7 +141,7 @@ const TripPlan = () => {
                     </div>
 
                     {/* Special Day 2 Note */}
-                    {day.day === 2 && (
+                    {day.day === 2 && day.title === "Industrial Tour" && (
                       <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
