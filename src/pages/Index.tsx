@@ -118,14 +118,14 @@ const Index = () => {
         {/* Professional Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900/80"></div>
         
-        {/* Partner Logos with Better Visibility */}
+        {/* Partner Logos with Handshake Animation */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="absolute top-8 left-8 z-20"
         >
-          <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
+          <div className="bg-white backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
             <img 
               src="/lovable-uploads/cb29001b-3ab3-4185-9007-0bcef8eb8815.png" 
               alt="Lovely Professional University" 
@@ -140,7 +140,7 @@ const Index = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="absolute top-8 right-8 z-20"
         >
-          <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
+          <div className="bg-white backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
             <img 
               src="/lovable-uploads/175e1893-079d-4220-93d9-1fc7919e22f0.png" 
               alt="UpGrad" 
@@ -148,6 +148,69 @@ const Index = () => {
             />
           </div>
         </motion.div>
+
+        {/* Handshake Animation - Nokia Style */}
+        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-30">
+          <motion.div
+            className="flex items-center gap-2"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 2, duration: 1, ease: "easeOut" }}
+          >
+            {/* Left Hand */}
+            <motion.div
+              className="w-8 h-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg relative"
+              animate={{
+                x: [0, 20, 0],
+                rotate: [0, 15, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 3,
+                ease: "easeInOut"
+              }}
+            >
+              <div className="absolute -right-1 top-1 w-3 h-4 bg-blue-400 rounded transform rotate-12"></div>
+            </motion.div>
+
+            {/* Handshake Effect */}
+            <motion.div
+              className="relative"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.7, 1, 0.7],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 3,
+                ease: "easeInOut"
+              }}
+            >
+              <div className="w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-ping"></div>
+              </div>
+            </motion.div>
+
+            {/* Right Hand */}
+            <motion.div
+              className="w-8 h-6 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg relative"
+              animate={{
+                x: [0, -20, 0],
+                rotate: [0, -15, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 3,
+                ease: "easeInOut"
+              }}
+            >
+              <div className="absolute -left-1 top-1 w-3 h-4 bg-orange-400 rounded transform -rotate-12"></div>
+            </motion.div>
+          </motion.div>
+        </div>
         
         <div className="container mx-auto px-4 z-10 pt-20">
           <motion.div
