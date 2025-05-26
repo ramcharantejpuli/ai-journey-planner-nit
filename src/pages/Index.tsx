@@ -125,7 +125,7 @@ const Index = () => {
           transition={{ duration: 0.8 }}
           className="absolute top-8 left-8 z-20"
         >
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
+          <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
             <img 
               src="/lovable-uploads/cb29001b-3ab3-4185-9007-0bcef8eb8815.png" 
               alt="Lovely Professional University" 
@@ -140,9 +140,9 @@ const Index = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="absolute top-8 right-8 z-20"
         >
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
+          <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
             <img 
-              src="/lovable-uploads/baf9c20c-44a5-4873-83e0-b14b890766e4.png" 
+              src="/lovable-uploads/175e1893-079d-4220-93d9-1fc7919e22f0.png" 
               alt="UpGrad" 
               className="h-12 md:h-16 w-auto object-contain"
             />
