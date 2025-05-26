@@ -25,23 +25,113 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm"></div>
+    <div className="min-h-screen bg-slate-900 relative overflow-hidden">
+      {/* Professional AI Background */}
+      <div className="absolute inset-0">
+        {/* Gradient Base */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/30 to-slate-900"></div>
         
-        {/* Partner Logos in Top Corners */}
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+
+        {/* Circuit Board Lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <path d="M 10,30 L 90,30 M 30,10 L 30,90 M 70,10 L 70,90" stroke="#3b82f6" strokeWidth="1" fill="none"/>
+              <circle cx="30" cy="30" r="3" fill="#3b82f6"/>
+              <circle cx="70" cy="30" r="3" fill="#8b5cf6"/>
+              <circle cx="50" cy="70" r="3" fill="#ec4899"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#circuit)"/>
+        </svg>
+
+        {/* Floating AI Particles */}
+        <div className="absolute inset-0">
+          {[...Array(30)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -50, 0],
+                x: [0, Math.random() * 20 - 10, 0],
+                opacity: [0.3, 0.8, 0.3],
+                scale: [0.8, 1.2, 0.8],
+              }}
+              transition={{
+                duration: 4 + Math.random() * 3,
+                repeat: Infinity,
+                delay: Math.random() * 3,
+                ease: "easeInOut"
+              }}
+            >
+              <div className={`w-${Math.random() > 0.5 ? '2' : '1'} h-${Math.random() > 0.5 ? '2' : '1'} rounded-full`}
+                   style={{
+                     background: ['#3b82f6', '#8b5cf6', '#ec4899'][Math.floor(Math.random() * 3)],
+                     boxShadow: '0 0 10px currentColor'
+                   }}>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Neural Network Animation */}
+        <div className="absolute inset-0 opacity-20">
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent"
+              style={{
+                left: `${(i + 1) * 12.5}%`,
+                height: '100%',
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                scaleY: [0.5, 1, 0.5],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay: i * 0.4,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        {/* Professional Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900/80"></div>
+        
+        {/* Partner Logos with Better Visibility */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="absolute top-8 left-8 z-20"
         >
-          <img 
-            src="/lovable-uploads/cb29001b-3ab3-4185-9007-0bcef8eb8815.png" 
-            alt="Lovely Professional University" 
-            className="h-16 md:h-20 w-auto object-contain"
-          />
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
+            <img 
+              src="/lovable-uploads/cb29001b-3ab3-4185-9007-0bcef8eb8815.png" 
+              alt="Lovely Professional University" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
+          </div>
         </motion.div>
 
         <motion.div
@@ -50,36 +140,15 @@ const Index = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="absolute top-8 right-8 z-20"
         >
-          <img 
-            src="/lovable-uploads/baf9c20c-44a5-4873-83e0-b14b890766e4.png" 
-            alt="UpGrad" 
-            className="h-16 md:h-20 w-auto object-contain"
-          />
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20 shadow-2xl">
+            <img 
+              src="/lovable-uploads/baf9c20c-44a5-4873-83e0-b14b890766e4.png" 
+              alt="UpGrad" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
+          </div>
         </motion.div>
         
-        {/* Animated Background Particles */}
-        <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white/20 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -100, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-
         <div className="container mx-auto px-4 z-10 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -87,34 +156,33 @@ const Index = () => {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            {/* Central Logo */}
+            {/* Central Logo with Glass Effect */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex justify-center items-center gap-8 mb-8"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+              <div className="flex items-center gap-4 bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 shadow-2xl">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-blue-400/30">
                   <span className="text-white font-bold text-lg">NIT</span>
                 </div>
-                <div className="text-white text-2xl font-light">×</div>
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center shadow-2xl">
+                <div className="text-white/60 text-2xl font-light">×</div>
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-orange-400/30">
                   <span className="text-white font-bold text-sm">UpGrad</span>
                 </div>
-                <div className="text-white text-2xl font-light">×</div>
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center shadow-2xl">
+                <div className="text-white/60 text-2xl font-light">×</div>
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-green-400/30">
                   <span className="text-white font-bold text-lg">LPU</span>
                 </div>
               </div>
             </motion.div>
 
-            
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6"
+              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 drop-shadow-lg"
             >
               AI Workshop 2024
             </motion.h1>
@@ -123,7 +191,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl md:text-2xl text-gray-300 mb-4"
+              className="text-xl md:text-2xl text-gray-200 mb-4 font-medium"
             >
               Data Science & Machine Learning Specialization
             </motion.p>
@@ -132,7 +200,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-lg text-gray-400 mb-8"
+              className="text-lg text-gray-300 mb-8"
             >
               NIT Jalandhar | December 11-14, 2024
             </motion.p>
