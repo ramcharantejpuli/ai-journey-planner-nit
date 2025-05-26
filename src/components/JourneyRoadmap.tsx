@@ -63,13 +63,6 @@ const JourneyRoadmap = () => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <motion.animateMotion
-                dur="3s"
-                repeatCount="indefinite"
-                begin="1s"
-              >
-                <mpath href="#path" />
-              </motion.animateMotion>
               <animateMotion
                 dur="3s"
                 repeatCount="indefinite"

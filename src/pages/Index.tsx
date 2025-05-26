@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Trophy, Clock, Download, MessageCircle } from 'lucide-react';
@@ -31,6 +30,33 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm"></div>
         
+        {/* Partner Logos in Top Corners */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute top-8 left-8 z-20"
+        >
+          <img 
+            src="/lovable-uploads/cb29001b-3ab3-4185-9007-0bcef8eb8815.png" 
+            alt="Lovely Professional University" 
+            className="h-16 md:h-20 w-auto object-contain"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="absolute top-8 right-8 z-20"
+        >
+          <img 
+            src="/lovable-uploads/baf9c20c-44a5-4873-83e0-b14b890766e4.png" 
+            alt="UpGrad" 
+            className="h-16 md:h-20 w-auto object-contain"
+          />
+        </motion.div>
+        
         {/* Animated Background Particles */}
         <div className="absolute inset-0">
           {[...Array(50)].map((_, i) => (
@@ -54,14 +80,14 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="container mx-auto px-4 z-10">
+        <div className="container mx-auto px-4 z-10 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-center"
           >
-            {/* Logos */}
+            {/* Central Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -83,6 +109,7 @@ const Index = () => {
               </div>
             </motion.div>
 
+            
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -166,19 +193,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Countdown Timer */}
+      
       <CountdownTimer />
-
-      {/* Journey Roadmap */}
       <JourneyRoadmap />
-
-      {/* Trip Plan */}
       <TripPlan />
-
-      {/* Registration Form */}
       <RegistrationForm />
-
-      {/* FAQ Section */}
       <FAQ />
 
       {/* Contact Section */}
